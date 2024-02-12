@@ -17,25 +17,25 @@ int main()
     while(1)
     {
         printf("Prompt : ");
-        fgets(buffer,TAILLE_BUFFER,stdin);
-        buffer[strlen(buffer)-1]='\0';
-        if (strcmp("exit",buffer)==0)
+        fgets(buffer,TAILLE_BUFFER,stdin);              // Stock la saisie dans le tampon "buffer"
+        buffer[strlen(buffer)-1]='\0';                  // Suppression du retour chariot de fin
+        if (strcmp("exit",buffer)==0)                   // Condition gérant la sortie de l'interpréteur lorsque "exit" est tapé en ligne de commande
         {
             exit(0);
         }
-        char *arg_list[32];
+        char *arg_list[32];                             // Création d'un tableau contenant les bouts de ligne entre caractères espace ;
         char *p=strdup(buffer);
         char *tmp=strtok(p," ");
         int increment=0;
-        while (tmp!=NULL)
+        while (tmp!=NULL)                               // Boucle qui itère sur chaque mot obtenu par strtok()
         {
             char *p=strstr(tmp,"*");
-            if (p==NULL)
+            if (p==NULL)                                // Si le mot ne contient pas '*', il est ajouté à arg_list.
             {
                 arg_list[increment]=strdup(tmp);
                 increment++;
             }
-            else
+            else                                        //Si le mot contient '*', la fonction glob() est utilisée pour rechercher les fichiers correspondant au motif. Les fichiers trouvés sont ensuite ajoutés à arg_list.
             {
                 glob_t     g;
                 int retour_glob=glob(tmp,0,NULL,&g);
@@ -53,7 +53,7 @@ int main()
             tmp=strtok(NULL," ");
         }
         arg_list[increment]=NULL;
-        pid_t process=fork();
+        pid_t process=fork();                              // Création d'un nouveau processus (fork);
         if (process==0)
         {
             int retour=execvp(arg_list[0],arg_list);
@@ -67,7 +67,7 @@ int main()
         increment=0;
         while (arg_list[increment]!=NULL)
         {
-            free(arg_list[increment]);
+            free(arg_list[increment]);                     // Libération des chaînes contenues dans arg_list ;
             increment++;
         }
         free(p);
