@@ -6,17 +6,18 @@ CodeBlocks, linux (ubuntu).
 
 ## Fonctionnalités
 
-Boucle sans fin effectuant les opérations suivantes :
+Le programme effectue une boucle while qui s'exécute indéfiniment jusqu'à ce que l'utilisateur entre "exit". Il utilise les fonctions suivantes :
 
-printf   - Affichage.
+printf   - Affichage du prompt.
 
-fgets    - Lecture sur entrée standard  qui permet d'éviter les buffers overflow en limitant le nombre de caractères lus, elle gère également le retour charriot et les espaces.
+fgets    - Lecture sur l'entrée standard (stdin) et stockage de la saisie dans "buffer". Elle permet d'éviter les buffers overflow en limitant le nombre de caractères lus.
 
-strlen   - Calcule l'avant-dernier caractère en calculant la longueur de la chaîne.
+strlen   - Calcule l'avant-dernier caractère en calculant la longueur de la chaîne. Elle supprime le caractère de nouvelle ligne (\n) ajouté par fgets(), remplaçant ainsi le dernier caractère par un caractère nul (\0).
 
-strdup   - Permet de dupliquer une chaîne.
+strdup   - Permet de dupliquer le contenu du tampon "buffer" dans une nouvelle chaîne de caractères dont la valeur de retour est assignée à "p".
 
-strtok   - Extrait des mots d'une chaîne.
+strtok   - Extrait les mots de la chaîne "p" et les divise en mots individuels séparés par des espaces. Le premier appel à strtok utilise " " comme délimiteur.
+
 
 ### Prise en compte caractère joker *.
 
@@ -28,6 +29,7 @@ S'il y a le caractère « * », je passe la sous-chaîne en paramètre à glob
 Ne pouvant plus connaître à l'avance le nombre d'arguments (celui-ci variant selon les retours éventuels de glob), je crée une arg_list de 32 éléments fixes à la place du calcul selon le nombre de sous-chaînes.
 
 globfree - Libère la mémoire occupée par un appel précédent à glob, évite une fuite de mémoire.
+
 
 ### Rendre le programme père autonome en lui donnant la possibilité d''attendre ou non le comportement de son fils avec la fonction wait.
 
