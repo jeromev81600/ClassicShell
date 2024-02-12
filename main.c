@@ -1,8 +1,3 @@
-/*****************************
- * shell 0.5
- * © 2015 - Christophe LOUVET
- ****************************/
-
 #include <string.h>
 #include <stdlib.h>
 #include <stdio.h>
