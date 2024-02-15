@@ -8,3 +8,13 @@
 	<errno.h>
 	<glob.h>
 
+1708026182 source:c:\users\jerom\documents\classicshell\main.c
+	<string.h>
+	<stdlib.h>
+	<stdio.h>
+	<windows.h>
+	<unistd.h>
+	<sys/wait.h>
+	<errno.h>
+	<glob.h>
+
