@@ -1,0 +1,10 @@
+# depslib dependency file v1.0
+1708024163 source:/home/jerome/Documents/Developpement/ClassicShell/main.c
+	<string.h>
+	<stdlib.h>
+	<stdio.h>
+	<unistd.h>
+	<sys/wait.h>
+	<errno.h>
+	<glob.h>
+

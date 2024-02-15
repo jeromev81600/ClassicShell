@@ -8,8 +8,18 @@
 
 #define TAILLE_BUFFER 150
 
+#ifdef _WIN32                                           //Préprocesseur défini par le compilateur lorsque le programme est sur windows
+    #define OS "Windows"
+#elif __linux__                                         //Préprocesseur défini par le compilateur lorsque le programme est sur Linux
+    #define OS "Linux"
+#else
+    #define OS "Unknown"
+#endif
+
+
 int main()
 {
+      printf("Le programme s'exécute sur : %s\n", OS);
       char    buffer[TAILLE_BUFFER];
 
     printf("\n Welcome to my command interpreter \n Tape \"exit\" to exit \n \n");
