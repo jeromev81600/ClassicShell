@@ -47,7 +47,10 @@
 		<Compiler>
 			<Add option="-Wall" />
 		</Compiler>
-		<Unit filename="../../../../../../Program Files (x86)/CodeBlocks/PDCurses-3.9/curses.h" />
+		<Unit filename="get_console_width.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="get_console_width.h" />
 		<Unit filename="main.c">
 			<Option compilerVar="CC" />
 		</Unit>

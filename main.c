@@ -9,26 +9,8 @@
 #ifdef _WIN32
     #include <windows.h>
     #include "get_console_width.h"
+    #include "glob_windows.h"
     #define OS "Windows"
-
-   void glob(const char *pattern, char *arg_list[], int *increment) {
-        WIN32_FIND_DATA findFileData;
-        HANDLE hFind = FindFirstFile(pattern, &findFileData);
-
-        if (hFind == INVALID_HANDLE_VALUE) {
-            printf("Aucun fichier correspondant au motif '%s' n'a été trouvé.\n", pattern);
-            return;
-        }
-
-        do {
-            if (!(findFileData.dwFileAttributes & FILE_ATTRIBUTE_DIRECTORY)) {
-                arg_list[*increment] = strdup(findFileData.cFileName);
-                (*increment)++;
-            }
-        } while (FindNextFile(hFind, &findFileData) != 0);
-
-        FindClose(hFind);
-    }
 
 //Préprocesseur défini par le compilateur lorsque le programme est sur Linux
 #elif __linux__
@@ -69,6 +51,14 @@ int main()
         {
             exit(0);
         }
+    else if (strncmp("cd ", buffer, 3) == 0)            // Vérification de la commande "cd"
+    {
+        char *dir = buffer + 3;                         // Extrait le chemin du répertoire à changer
+        if (chdir(dir) != 0)                            // Changer de répertoire
+        {
+            perror("chdir");
+        }
+    }
         char *arg_list[32];                             // Création d'un tableau contenant les bouts de ligne entre caractères espace ;
         char *p=strdup(buffer);
         char *tmp=strtok(p," ");

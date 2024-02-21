@@ -1,8 +1,9 @@
 # Création d'un système shell classique.
-Interpréteur de commande qui lit la commande entrée sur la console et l'exécute, ou qui exécute une liste d'instructions stockée dans un fichier (script).
+Interpréteur de commande qui lit la commande entrée sur la console et l'exécute.
 
 ## Technologies utilisées
-CodeBlocks, linux (ubuntu).
+CodeBlocks, 
+Ce programme est a été conçu pour fonctionner sous linux et windows (tests effectués sur Ubuntu et windows 11).
 
 ## Fonctionnalités
 

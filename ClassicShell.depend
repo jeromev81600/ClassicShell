@@ -18,13 +18,14 @@
 	<errno.h>
 	<glob.h>
 
-1708534498 source:c:\users\jerom\onedrive\bureau\c\classicshell\main.c
+1708536757 source:c:\users\jerom\onedrive\bureau\c\classicshell\main.c
 	<string.h>
 	<stdlib.h>
 	<stdio.h>
 	"printf_center.h"
 	<windows.h>
 	"get_console_width.h"
+	"glob_windows.h"
 	<unistd.h>
 	<sys/wait.h>
 	<errno.h>
@@ -64,4 +65,9 @@
 	<windows.h>
 
 1708533657 c:\users\jerom\onedrive\bureau\c\classicshell\get_console_width.h
+
+1708536693 c:\users\jerom\onedrive\bureau\c\classicshell\glob_windows.h
+
+1708536882 source:c:\users\jerom\onedrive\bureau\c\classicshell\glob_windows.c
+	<windows.h>
 
