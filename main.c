@@ -1,10 +1,14 @@
 #include <string.h>
 #include <stdlib.h>
 #include <stdio.h>
+#include "printf_center.h"
+
+#define TAILLE_BUFFER 150
 
 //Préprocesseur défini par le compilateur lorsque le programme est sur windows
 #ifdef _WIN32
     #include <windows.h>
+    #include "get_console_width.h"
     #define OS "Windows"
 
    void glob(const char *pattern, char *arg_list[], int *increment) {
@@ -39,14 +43,22 @@
     #define OS "Unknown"
 #endif
 
-#define TAILLE_BUFFER 150
 
 int main()
 {
-      printf("Le programme s'execute sur : %s\n", OS);
+ 	/* message to be appeared on the screen */
+    char main_title_str[] = "+---------------------------------------------------+\n*  Welcome to my command interpreter  *\n created for my registration at holberton school \n+---------------------------------------------------+\n\n\n\n";
+
+     #ifdef _WIN32
+    int console_width = get_console_width();
+    printf_center(main_title_str, console_width);
+     #else
+    printf("**************************************\n*  Welcome to my command interpreter  *\n * created for my registration at holberton school *\n**************************************\n\n Tape \"exit\" to exit \n\n");
+    #endif
+    printf("\nThis version of the program runs on : %s\n< Tape \"exit\" to exit > \n\n\n", OS);
       char    buffer[TAILLE_BUFFER];
 
-    printf("\n Welcome to my command interpreter \n Tape \"exit\" to exit \n \n");
+
 
     while(1)
     {

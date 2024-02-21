@@ -18,3 +18,50 @@
 	<errno.h>
 	<glob.h>
 
+1708534498 source:c:\users\jerom\onedrive\bureau\c\classicshell\main.c
+	<string.h>
+	<stdlib.h>
+	<stdio.h>
+	"printf_center.h"
+	<windows.h>
+	"get_console_width.h"
+	<unistd.h>
+	<sys/wait.h>
+	<errno.h>
+	<glob.h>
+
+1708533754 c:\users\jerom\onedrive\bureau\c\classicshell\printf_center.h
+
+1708534806 source:c:\users\jerom\onedrive\bureau\c\classicshell\printf_center.c
+	<stdio.h>
+	<string.h>
+
+1708432621 c:\users\jerom\onedrive\bureau\c\pdcurses-3.9\curses.h
+	<stdarg.h>
+	<stddef.h>
+	<stdio.h>
+	<wchar.h>
+
+1708432621 c:\pdcurses-3.9\curses.h
+	<stdarg.h>
+	<stddef.h>
+	<stdio.h>
+	<wchar.h>
+
+1708446922 c:\users\jerom\onedrive\bureau\c\classicshell\pdcurses-3.9\curses.h
+	<stdarg.h>
+	<stddef.h>
+	<stdio.h>
+	<wchar.h>
+
+1708446922 c:\program files (x86)\codeblocks\pdcurses-3.9\curses.h
+	<stdarg.h>
+	<stddef.h>
+	<stdio.h>
+	<wchar.h>
+
+1708532423 source:c:\users\jerom\onedrive\bureau\c\classicshell\get_console_width.c
+	<windows.h>
+
+1708533657 c:\users\jerom\onedrive\bureau\c\classicshell\get_console_width.h
+
