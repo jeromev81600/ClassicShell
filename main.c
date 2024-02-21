@@ -1,7 +1,10 @@
 #include <string.h>
 #include <stdlib.h>
 #include <stdio.h>
-#include <unistd.h>         // pour utiliser Chdir
+#include <unistd.h>         // pour utiliser  la méthode Chdir
+#include <limits.h>         // pour déclarer la constante PATH_MAX.
+
+#include "get_console_width.h"
 #include "printf_center.h"
 
 #define TAILLE_BUFFER 150
@@ -9,7 +12,6 @@
 // Préprocesseur défini par le compilateur lorsque le programme est sur Windows
 #ifdef _WIN32
 #include <windows.h>
-#include "get_console_width.h"
 #include "glob_windows.h"
 #define OS "Windows"
 
@@ -43,42 +45,44 @@ int main()
         fgets(buffer, TAILLE_BUFFER, stdin); // Stock la saisie dans le tampon "buffer"
         buffer[strlen(buffer) - 1] = '\0';   // Suppression du retour chariot de fin
         if (strcmp("exit", buffer) == 0)     // Condition gérant la sortie de l'interpréteur lorsque "exit" est tapé en ligne de commande
-        {
-            exit(0);
-        }
+         {
+          exit(0);
+         }
         else if (strncmp("cd ", buffer, 3) == 0) // Vérification de la commande "cd"
-        {
+         {
             char *dir = buffer + 3; // Extrait le chemin du répertoire à changer
                if (chdir(dir) != 0)    // Changer de répertoire
-            {
-                perror("chdir");
-            }
-             else
-    {
-        char cwd[PATH_MAX]; // Déclare un tableau pour stocker le chemin du répertoire actuel
-        // Obtient le chemin du répertoire actuel
-        if (getcwd(cwd, sizeof(cwd)) != NULL)
-        {
-            // Affiche le chemin du répertoire actuel après la navigation réussie
-            printf("Changement de repertoire vers : %s\n", cwd);
-        }
-        else
-        {
-            // Affiche une erreur si la récupération du répertoire actuel échoue
-            perror("getcwd");
-            return EXIT_FAILURE; // Quitte le programme avec un code d'erreur
-        }
-    }
-        }
-        else if (strcmp("cd ..", buffer) == 0)
-        {
+                {
+                 perror("chdir");
+                }
+               else
+                {
+                  char cwd[PATH_MAX]; // Déclare un tableau pour stocker le chemin du répertoire actuel
+
+                  // Obtient le chemin du répertoire actuel
+                  if (getcwd(cwd, sizeof(cwd)) != NULL)
+                   {
+                    // Affiche le chemin du répertoire actuel après la navigation réussie
+                    printf("Changement de repertoire vers : %s\n", cwd);
+                   }
+                  else
+                   {
+                    // Affiche une erreur si la récupération du répertoire actuel échoue
+                    perror("getcwd");
+                    return EXIT_FAILURE; // Quitte le programme avec un code d'erreur
+                   }
+                 }
+          }
+         else if (strcmp("cd ..", buffer) == 0)
+          {
             chdir(".."); // Changer de répertoire dans le processus parent
-        }
+          }
 
         char *arg_list[32];                // Création d'un tableau contenant les bouts de ligne entre caractères espace ;
         char *p = strdup(buffer);
         char *tmp = strtok(p, " ");
         int increment = 0;
+
         while (tmp != NULL) // Boucle qui itère sur chaque mot obtenu par strtok()
         {
             char *p = strstr(tmp, "*");
