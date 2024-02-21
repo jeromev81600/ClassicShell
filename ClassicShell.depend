@@ -18,10 +18,11 @@
 	<errno.h>
 	<glob.h>
 
-1708536757 source:c:\users\jerom\onedrive\bureau\c\classicshell\main.c
+1708542468 source:c:\users\jerom\onedrive\bureau\c\classicshell\main.c
 	<string.h>
 	<stdlib.h>
 	<stdio.h>
+	<unistd.h>
 	"printf_center.h"
 	<windows.h>
 	"get_console_width.h"
@@ -31,9 +32,9 @@
 	<errno.h>
 	<glob.h>
 
-1708533754 c:\users\jerom\onedrive\bureau\c\classicshell\printf_center.h
+1708540832 c:\users\jerom\onedrive\bureau\c\classicshell\printf_center.h
 
-1708534806 source:c:\users\jerom\onedrive\bureau\c\classicshell\printf_center.c
+1708540832 source:c:\users\jerom\onedrive\bureau\c\classicshell\printf_center.c
 	<stdio.h>
 	<string.h>
 
@@ -61,14 +62,17 @@
 	<stdio.h>
 	<wchar.h>
 
-1708532423 source:c:\users\jerom\onedrive\bureau\c\classicshell\get_console_width.c
+1708540832 source:c:\users\jerom\onedrive\bureau\c\classicshell\get_console_width.c
 	<windows.h>
+	<stdio.h>
+	<sys/ioctl.h>
+	<unistd.h>
 
-1708533657 c:\users\jerom\onedrive\bureau\c\classicshell\get_console_width.h
+1708540832 c:\users\jerom\onedrive\bureau\c\classicshell\get_console_width.h
 
-1708536693 c:\users\jerom\onedrive\bureau\c\classicshell\glob_windows.h
+1708540832 c:\users\jerom\onedrive\bureau\c\classicshell\glob_windows.h
 
-1708536882 source:c:\users\jerom\onedrive\bureau\c\classicshell\glob_windows.c
+1708540832 source:c:\users\jerom\onedrive\bureau\c\classicshell\glob_windows.c
 	<windows.h>
 
 1708542855 source:/home/jerome/Documents/developpement/ClassicShell/get_console_width.c
@@ -102,4 +106,37 @@
 
 1708541841 source:/home/jerome/Documents/developpement/ClassicShell/glob_windows.c
 	<windows.h>
+
+1708540832 source:c:\users\jerom\onedrive\bureau\langc\classicshell\get_console_width.c
+	<windows.h>
+	<stdio.h>
+	<sys/ioctl.h>
+	<unistd.h>
+
+1708540832 source:c:\users\jerom\onedrive\bureau\langc\classicshell\glob_windows.c
+	<windows.h>
+
+1708548932 source:c:\users\jerom\onedrive\bureau\langc\classicshell\main.c
+	<string.h>
+	<stdlib.h>
+	<stdio.h>
+	<unistd.h>
+	"printf_center.h"
+	<windows.h>
+	"get_console_width.h"
+	"glob_windows.h"
+	<unistd.h>
+	<sys/wait.h>
+	<errno.h>
+	<glob.h>
+
+1708540832 c:\users\jerom\onedrive\bureau\langc\classicshell\printf_center.h
+
+1708540832 c:\users\jerom\onedrive\bureau\langc\classicshell\get_console_width.h
+
+1708540832 c:\users\jerom\onedrive\bureau\langc\classicshell\glob_windows.h
+
+1708540832 source:c:\users\jerom\onedrive\bureau\langc\classicshell\printf_center.c
+	<stdio.h>
+	<string.h>
 
