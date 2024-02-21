@@ -142,3 +142,37 @@
 	<stdio.h>
 	<string.h>
 
+1708551809 source:/home/jerome/Bureau/ClassicShell/get_console_width.c
+	<windows.h>
+	<stdio.h>
+	<sys/ioctl.h>
+	<unistd.h>
+
+1708552381 source:/home/jerome/Bureau/ClassicShell/glob_windows.c
+	<windows.h>
+
+1708551889 source:/home/jerome/Bureau/ClassicShell/main.c
+	<string.h>
+	<stdlib.h>
+	<stdio.h>
+	<unistd.h>
+	<limits.h>
+	"get_console_width.h"
+	"printf_center.h"
+	<windows.h>
+	"glob_windows.h"
+	<unistd.h>
+	<sys/wait.h>
+	<errno.h>
+	<glob.h>
+
+1708551809 /home/jerome/Bureau/ClassicShell/get_console_width.h
+
+1708551809 /home/jerome/Bureau/ClassicShell/printf_center.h
+
+1708551809 /home/jerome/Bureau/ClassicShell/glob_windows.h
+
+1708551809 source:/home/jerome/Bureau/ClassicShell/printf_center.c
+	<stdio.h>
+	<string.h>
+

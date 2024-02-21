@@ -1,3 +1,4 @@
+  #ifdef _WIN32
   #include <windows.h>
 
   void glob(const char *pattern, char *arg_list[], int *increment) {
@@ -18,3 +19,4 @@
 
         FindClose(hFind);
     }
+#endif
