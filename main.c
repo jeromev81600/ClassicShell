@@ -162,7 +162,6 @@ int main()
         {
             int retour = execvp(arg_list[0], arg_list);
             if (retour == -1)
-                printf("%s\n", strerror(errno));
             exit(0);
         }
         else
